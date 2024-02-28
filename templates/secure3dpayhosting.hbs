@@ -1,0 +1,51 @@
+<html>
+  <head> </head>
+  <body>
+    <form id="nestPay3dhosting" method="post" action="{{url}}">
+      <!--clientId-->
+      <input type="hidden" name="clientid" value="{{form.clientId}}" />
+      <!--storetype-->
+      <input type="hidden" name="storetype" value="{{form.storetype}}" />
+      <!--hash-->
+      <input type="hidden" name="hash" value="{{form.hash}}" />
+      <!--islemtipi-->
+      <input type="hidden" name="islemtipi" value="{{form.processType}}" />
+      <!--amount-->
+      <input type="hidden" name="amount" value="{{form.amount}}" />
+      <!--currency-->
+      <input type="hidden" name="currency" value="{{form.currency}}" />
+      <!--oid-->
+      <input type="hidden" name="oid" value="{{form.oid}}" />
+      <!--refreshtime-->
+      <input type="hidden" name="refreshtime" value="{{form.refreshtime}}" />
+      <!--okUrl-->
+      <input type="hidden" name="okUrl" value="{{form.okUrl}}" />
+      <!--failUrl-->
+      <input type="hidden" name="failUrl" value="{{form.failUrl}}" />
+      <!--lang-->
+      <input type="hidden" name="lang" value="{{form.lang}}" />
+      <!--rnd-->
+      <input type="hidden" name="rnd" value="{{form.rnd}}" />
+      {{#if form.products}}
+
+        {{#each form.products}}
+          <input type="hidden" name="id{{@index}}" value="{{@index}}" />
+          <input
+            type="hidden"
+            name="price{{@index}}"
+            value="{{this.product.price}}"
+          />
+          <input
+            type="hidden"
+            name="amount{{@index}}"
+            value="{{this.amount}}"
+          />
+
+        {{/each}}
+      {{/if}}
+    </form>
+    <script type="text/javascript">
+      document.getElementById('nestPay3dhosting').submit()
+    </script>
+  </body>
+</html>
