@@ -10,7 +10,6 @@ app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
 
 nestpay = new nodeNestpay({
-  name: "<MERCHANTNAME>",
   clientId: "<YOURCLIENTID>",
   storekey: "<YOURSTOREKEY>",
   callbackSuccess: "http://localhost:3000/success",
@@ -29,11 +28,18 @@ app.get("/", function (req, res) {
       products: [
         {
           product: {
-            price: 10,
+            _id: "<PRODUCTID>",
+            categoryName: "<PRODUCTCATEGORY>",
+            price: "<PRODUCTPRICE>",
+            productDetails: "<PRODUCTDETAIL>",
+
+            productThumbnail: "<PRODUCTTHUMBNAIL>",
+            productName: "<PRODUCTNAME>",
           },
-          amount: 100,
+          amount: "<PRODUCTAMOUNT>",
         },
       ],
+      userId: "<USERID>",
     })
     .then(function (secure3dResult) {
       res.send(secure3dResult);

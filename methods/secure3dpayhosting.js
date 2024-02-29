@@ -35,6 +35,7 @@ module.exports = function (nestpay) {
           processType: value.processType || that.config.processType,
           refreshtime: value.refreshtime || that.config.refreshtime,
           products: value.products || null,
+          userId: value.userId || null,
         },
         url: that.config.endpoints3d[that.config.endpoint],
       };

@@ -26,14 +26,40 @@
       <input type="hidden" name="lang" value="{{form.lang}}" />
       <!--rnd-->
       <input type="hidden" name="rnd" value="{{form.rnd}}" />
+      <!--rnd-->
+      <input type="hidden" name="userId" value="{{form.userId}}" />
       {{#if form.products}}
 
         {{#each form.products}}
-          <input type="hidden" name="id{{@index}}" value="{{@index}}" />
+          <input
+            type="hidden"
+            name="id{{@index}}"
+            value="{{this.product._id}}"
+          />
           <input
             type="hidden"
             name="price{{@index}}"
             value="{{this.product.price}}"
+          />
+          <input
+            type="hidden"
+            name="productName{{@index}}"
+            value="{{this.product.productName}}"
+          />
+          <input
+            type="hidden"
+            name="productThumbnail{{@index}}"
+            value="{{this.product.productThumbnail}}"
+          />
+          <input
+            type="hidden"
+            name="productDetails{{@index}}"
+            value="{{this.product.productDetails}}"
+          />
+          <input
+            type="hidden"
+            name="categoryName{{@index}}"
+            value="{{this.product.categoryName}}"
           />
           <input
             type="hidden"
@@ -42,6 +68,11 @@
           />
 
         {{/each}}
+        <input
+          type="hidden"
+          name="productCount"
+          value="{{form.products.length}}"
+        />
       {{/if}}
     </form>
     <script type="text/javascript">

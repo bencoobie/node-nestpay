@@ -73,7 +73,7 @@ export interface INestSecure3dPayHostingRequestReturn {
     storetype: "3D PAY HOSTING";
     lang: string;
     hash: string;
-    refreshtime: 5;
+    refreshtime: number;
   };
   url: string;
 }
@@ -94,7 +94,7 @@ export interface INestSecure3dRequestReturn {
     storetype: "3d";
     lang: string;
     hash: string;
-    refreshtime: 5;
+    refreshtime: number;
   };
   url: string;
 }
