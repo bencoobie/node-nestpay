@@ -71,6 +71,16 @@
             name="amount{{@index}}"
             value="{{this.amount}}"
           />
+          <input
+            type="hidden"
+            name="stockCode{{@index}}"
+            value="{{this.product.stockCode}}"
+          />
+          <input
+            type="hidden"
+            name="stockUnit{{@index}}"
+            value="{{this.product.stockUnit}}"
+          />
 
         {{/each}}
         <input
